@@ -86,7 +86,6 @@ function btn_theme_change(x){
   x.classList.toggle('btn-dark');
 }
 function menu_item_add(item){
-  console.log(item);
   const menu_item=document.createElement('div');
   const menu_section=document.querySelector('.section-center');
   menu_item.classList.add('menu-items','col-lg-6','col-sm-12');
@@ -119,7 +118,12 @@ buttons.forEach(x=>x.addEventListener('click',function(e){
     all_btn.classList.contains('btn-dark')?btn_theme_change(all_btn):null;
     btn_theme_change(x);
   }
-  const shown_values=menu.filter(y=>x.innerHTML=="All"?true:y.category==x.innerHTML);
+  const menu_section=document.querySelector('.section-center');
+  menu_section.innerHTML="";
+  const selected_values=[];
+  buttons.forEach(item=>item.classList.contains('btn-dark')?selected_values.push(item.innerHTML):null);
+  console.log(selected_values);
+  const shown_values=menu.filter(y=>selected_values.includes("All")?true:selected_values.includes(y.category));
   shown_values.forEach(item=>menu_item_add(item));
 }));
 
