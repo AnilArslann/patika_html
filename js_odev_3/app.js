@@ -81,3 +81,24 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+function btn_theme_change(x){
+  x.classList.toggle('btn-light');
+  x.classList.toggle('btn-dark');
+}
+
+//button event listeners
+const buttons = document.querySelectorAll(".btn-item");
+const all_btn=document.querySelector('.btn-all')
+buttons.forEach(x=>x.addEventListener('click',function(e){
+
+  if(e.srcElement.classList.contains('btn-all')){
+      buttons.forEach(y=>y.classList.contains('btn-dark')?btn_theme_change(y):null);
+      all_btn.classList.contains('btn-light')?btn_theme_change(all_btn):null;
+    
+  }
+  else{
+    all_btn.classList.contains('btn-dark')?btn_theme_change(all_btn):null;
+    btn_theme_change(x);
+  }
+}));
+
