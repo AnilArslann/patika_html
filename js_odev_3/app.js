@@ -85,20 +85,45 @@ function btn_theme_change(x){
   x.classList.toggle('btn-light');
   x.classList.toggle('btn-dark');
 }
+function menu_item_add(item){
+  console.log(item);
+  const menu_item=document.createElement('div');
+  const menu_section=document.querySelector('.section-center');
+  menu_item.classList.add('menu-items','col-lg-6','col-sm-12');
+  menu_item.innerHTML=`<img src=${item.img} alt=${item.title} class="photo"></img>
+  <div class="menu-info">
+    <div class="menu-title">
+      <h4>${item.title}</h4>
+      <h4 class="price">${item.price}</h4>
+    </div>
+    <div class="menu-text">
+      ${item.desc}
+    </div>
+  </div>`;
+
+  menu_section.appendChild(menu_item);
+}
 
 //button event listeners
 const buttons = document.querySelectorAll(".btn-item");
 const all_btn=document.querySelector('.btn-all')
 buttons.forEach(x=>x.addEventListener('click',function(e){
-
+  
   if(e.srcElement.classList.contains('btn-all')){
       buttons.forEach(y=>y.classList.contains('btn-dark')?btn_theme_change(y):null);
       all_btn.classList.contains('btn-light')?btn_theme_change(all_btn):null;
+      
     
   }
   else{
     all_btn.classList.contains('btn-dark')?btn_theme_change(all_btn):null;
     btn_theme_change(x);
   }
+  menu.map(item=>function() {
+    x.innerHTML=="All"?menu_item_add(item):(item.category==x.innerHTML?menu_item_add(item):null);
+  });
 }));
+
+
+
 
