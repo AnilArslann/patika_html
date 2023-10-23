@@ -119,9 +119,8 @@ buttons.forEach(x=>x.addEventListener('click',function(e){
     all_btn.classList.contains('btn-dark')?btn_theme_change(all_btn):null;
     btn_theme_change(x);
   }
-  menu.map(item=>function() {
-    x.innerHTML=="All"?menu_item_add(item):(item.category==x.innerHTML?menu_item_add(item):null);
-  });
+  const shown_values=menu.filter(y=>x.innerHTML=="All"?true:y.category==x.innerHTML);
+  shown_values.forEach(item=>menu_item_add(item));
 }));
 
 
