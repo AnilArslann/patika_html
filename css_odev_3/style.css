@@ -1,4 +1,12 @@
-
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 img.logo{
     width:272px;
     height:92px;
@@ -20,6 +28,11 @@ svg.photo-upload{
   width:25px;
   height:25px;
 }
+img.leaf-img{
+  width: 12px;
+  height: 14px;
+  padding-right:6px;
+}
 div.div-more-img{
   width:24px;
   height:24px;
@@ -30,7 +43,7 @@ div.div-more-img{
 div.div-profile-img{
   width:32px;
   height:32px;
-  padding:7px
+  padding:7px;
   
 }
 div.div-more-img:hover{
@@ -59,8 +72,9 @@ nav{
   display:flex;
   justify-content:end;
   align-items: center;
+  margin-top:10px;
 }
-nav> a {
+ a {
 
   text-align: center;
   margin-right:15px;
@@ -71,7 +85,7 @@ nav> a {
 
   
 }
-nav>a:hover{
+a:hover{
   text-decoration: underline;
 }
 
@@ -79,7 +93,8 @@ div.main-part{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  flex:1;
+  margin-bottom: 200px;
   flex-direction: column;
 
 
@@ -141,4 +156,71 @@ div.main-part div.search-bar{
   border-radius: 4px;
   color:#3c4043;
   text-align: center;
+  cursor:pointer;
 }
+.btn:hover{
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  color:#3c4043;
+  text-align: center;
+  cursor:pointer;
+}
+
+div.bottom-part{
+  
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+
+  }
+  div.bottom-part div.footer-part{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:0px 20px;
+
+    background:#f2f2f2 ;
+
+  }
+  div.bottom-part div.country-part{
+    display: flex;
+    align-items: end;
+    background: #f2f2f2;
+    border-bottom: 1px solid #dadce0;
+    width: 100%;
+    padding:15px 30px;
+    font:14px arial;
+  
+    padding-left:90px;
+  }
+  div.bottom-part div.footer-part div.second-part{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right:180px;
+  }
+  div.bottom-part div.footer-part div.first-part {
+    
+    display: flex;
+    margin-left:20px;
+    
+  
+  }
+  div.bottom-part div.footer-part div.third-part {
+    
+    display: flex;
+    
+  
+  }
+  
+  div.bottom-part div.footer-part a {
+    font:14px arial ;
+    padding:15px;
+    color:#70757a;
+  }
+  
+  
