@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+}
+nav{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    background-color:grey;
+}
+.nav-a{
+    padding:20px 10px;
+    text-decoration: none;
+    color:white;
+    opacity: 0.6;
+    transition:0.2s;
+
+  
+}
+.nav-a:hover{
+    opacity: 1;
+
+}
+.logo{
+    color:red;
+    opacity:1;
+    
+
+}
+.jumbotron{
+    margin-top:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.row{
+    margin-top: 20px;
+}
